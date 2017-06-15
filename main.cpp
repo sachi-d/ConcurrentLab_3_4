@@ -2,60 +2,68 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 
 using namespace std;
-
-int mat_mul()
+class Matrix
 {
-    double a[5][5];//,b[5][5],c[5][5];
-    int n=10;//,i,j,k;
+public:
+    Matrix( size_t n);
+    double& operator()(size_t i, size_t j);
+    double operator()(size_t i, size_t j) const;
+    size_t getSize();
 
+private:
+    size_t mCols;
+    std::vector<double> mData;
+};
 
-    /* initialize random seed: */
-    srand (time(NULL));
-
-
-//    cout<<f  ;
-//    cin>>m>>n;
-//    cout<<"Enter rows and columns of second matrix:";
-//    cin>>p>>q;
-
+Matrix::Matrix( size_t n)
+    :   mCols(n),
+        mData(n * n)
+{
+    double a[n][n];
     double f;
-//    cout<<"\nEnter first matrix:\n";
+    //fill with random values
     for(int i=0; i<n;  i++)
     {
         for(int j=0; j<n; j++)
         {
-            f= (double)rand() / RAND_MAX;
-            cout<<f;
-            a[i][j]=f;
+            f= rand();
+            cout<<f <<"\n";
+            mData[i * mCols + j]=f;
         }
-
     }
+}
+
+double& Matrix::operator()(size_t i, size_t j)
+{
+    return mData[i * mCols + j];
+}
+
+double Matrix::operator()(size_t i, size_t j) const
+{
+    return mData[i * mCols + j];
+}
+size_t Matrix::getSize()
+{
+    return mCols;
+}
 
 
-//    cout<<"\nEnter second matrix:\n";
-//    for(i=0; i<n; ++i)
-//        for(j=0; j<n; ++j)
-////            cin>>b[i][j];
-//
-//            cout<<"\nThe new matrix is:\n";
-//    for(i=0; i<n; ++i)
-//    {
-//        for(j=0; j<n; ++j)
-//        {
-//            c[i][j]=0;
-//            for(k=0; k<n; ++k)
-//                c[i][j]=c[i][j]+(a[i][k]*b[k][j]);
-//            cout<<c[i][j]<<" ";
-//        }
-//        cout<<"\n";
-//    }
-
-    return 0;
+Matrix seq_mat_mul( Matrix a, Matrix b)
+{
+    Matrix c(5);
+    return c;
 }
 int main()
 {
-    return mat_mul();
-//    return 0;
+//    initialize random seed:
+    srand (time(NULL));
+
+//    initialize a Matrix of size 5
+    Matrix c(5);
+    cout<<"Last Element: " <<c(4,4)<< "\n";
+    cout<<"Size: "<<c.getSize();
+    return 0;
 }
