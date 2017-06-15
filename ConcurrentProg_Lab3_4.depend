@@ -1,5 +1,8 @@
 # depslib dependency file v1.0
-1497414169 source:c:\users\sachi\documents\codeblocksprograms\concurrentprog_lab3_4\main.cpp
+1497531851 source:c:\users\sachi\documents\codeblocksprograms\concurrentprog_lab3_4\main.cpp
 	<iostream>
+	<stdio.h>
 	<stdlib.h>
+	<time.h>
+	<vector>
 

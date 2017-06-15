@@ -22,7 +22,7 @@ Alternatively, you can run `main.cpp`
 
 `a(4,4);` last element in matrix 
 
-`a(1,4);` 2nd column 5th element
+`a(1,4);` 2nd row 5th element
 
 <br>
 
