@@ -16,6 +16,16 @@ Alternatively, you can run `main.cpp`
 `a.getSize();` returns 5
 
 
+<br><b>Fill with random values</b>
+
+`a.generateRandomValues();` fills the matrix with random values
+
+
+<br><b>Display elements:</b> 
+
+`a.displayValues();` display all elements in the matrix
+
+
 <br><b>Accessing elements:</b> 
 
 `a(0,0);` first element in matrix
@@ -24,8 +34,13 @@ Alternatively, you can run `main.cpp`
 
 `a(1,4);` 2nd row 5th element
 
+
+
 <br>
 
 # Functions
 
-`seq_mat_mul(Matrix A, Matrix B)` calculates sequential matrix multiplication of A and B and returns a new `Matrix`
+
+<br><b>Sequential multiplication:</b> 
+
+`Matrix C = seq_mat_mul(Matrix A, Matrix B)` calculates sequential matrix multiplication of A and B and returns a new `Matrix`

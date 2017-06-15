@@ -75,7 +75,6 @@ Matrix seq_mat_mul( Matrix a, Matrix b)
     Matrix c(n);
     for(int i=0; i<n; i++)
     {
-
         for(int j=0; j<n; j++)
         {
             double local_sum=0;
