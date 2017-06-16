@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
+# include <omp.h>
 
 using namespace std;
 class Matrix
@@ -73,6 +74,8 @@ Matrix seq_mat_mul( Matrix a, Matrix b)
 {
     int n =a.getSize();
     Matrix c(n);
+//    cout<< "n: " << n << "\n";
+    clock_t begin_time = clock();
     for(int i=0; i<n; i++)
     {
         for(int j=0; j<n; j++)
@@ -85,26 +88,62 @@ Matrix seq_mat_mul( Matrix a, Matrix b)
             c(i,j)=local_sum;
         }
     }
+    cout << "Sequential time: "<<float( clock () - begin_time ) / CLOCKS_PER_SEC  <<"\n";
     return c;
 }
+
+Matrix parallel_mat_mul(Matrix a, Matrix b)
+{
+    int n =a.getSize();
+    Matrix c(n);
+//    cout<< "n: " << n << "\n";
+    clock_t begin_time = clock();
+    # pragma omp parallel shared ( a, b, c, n  ) // private ( i, j, k )
+    {
+        # pragma omp for
+        for ( int i = 0; i < n; i++ )
+        {
+            for (int j = 0; j < n; j++ )
+            {
+                double local_sum=0;
+                for ( int k = 0; k < n; k++ )
+                {
+                    local_sum+= (a(i,k)*b(k,j));
+                }
+                c(i,j)=local_sum;
+            }
+        }
+
+    }
+    cout << "Parallel time: "<<float( clock () - begin_time ) / CLOCKS_PER_SEC  <<"\n";
+    return c;
+}
+
 int main()
 {
     //    initialize random seed:
     srand (time(NULL));
 
-    //    initialize a Matrix of size 5
-    int my_size = 3;
+    int start=200, stop=1000, step=200;
 
-    Matrix a(my_size);
-    a.generateRandomValues();
-    a.displayValues();
+    for(int n=start; n<=stop; n+=step)
+    {
+        cout<< "\nn: " << n << "\n";
+        //    initialize a Matrix of size 5
+        int my_size = n;
 
-    Matrix b(my_size);
-    b.generateRandomValues();
-    b.displayValues();
+        Matrix a(my_size);
+        a.generateRandomValues();
+//    a.displayValues();
 
-    Matrix c=seq_mat_mul(a,b);
-    c.displayValues();
+        Matrix b(my_size);
+        b.generateRandomValues();
+//    b.displayValues();
+
+        Matrix c=seq_mat_mul(a,b);
+        Matrix d=parallel_mat_mul(a,b);
+//    c.displayValues();
+    }
 
     return 0;
 }
