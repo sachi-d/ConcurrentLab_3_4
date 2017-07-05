@@ -16,6 +16,7 @@ public:
     void generateRandomValues();
     void displayValues();
 
+
 private:
     size_t mCols;
     std::vector<double> mData;
@@ -146,4 +147,7 @@ int main()
     }
 
     return 0;
+}
+Matrix parallel_mat_mul(Matrix a, Matrix b, int N){
+	assert((N%til))
 }
