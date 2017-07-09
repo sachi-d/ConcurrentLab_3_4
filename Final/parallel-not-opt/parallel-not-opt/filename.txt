@@ -1,0 +1,24 @@
+
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+Parallel: 23.25
+-----Mean Time----400 - matrix size
+Parallel: 167.75
+-----Mean Time----600 - matrix size
+Parallel: 1006.75
+-----Mean Time----800 - matrix size
+Parallel: 2777.25
+-----Mean Time----1000 - matrix size
+Parallel: 8489
+-----Mean Time----1200 - matrix size
+Parallel: 17747
+-----Mean Time----1400 - matrix size
+Parallel: 29569.5
+-----Mean Time----1600 - matrix size
+Parallel: 45047.3
+-----Mean Time----1800 - matrix size
+Parallel: 69847.8
+-----Mean Time----2000 - matrix size
+Parallel: 97352.8
+-----------FINISHED-----------------
+---------------------------------------------

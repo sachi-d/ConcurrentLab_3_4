@@ -1,0 +1,784 @@
+
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23
+-----Mean Time----400 - matrix size
+parallelSMID: 104.5
+-----Mean Time----600 - matrix size
+parallelSMID: 290
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 104
+-----Mean Time----600 - matrix size
+parallelSMID: 277
+-----Mean Time----800 - matrix size
+parallelSMID: 603.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 1206.25
+-----Mean Time----1200 - matrix size
+parallelSMID: 1943.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2947.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 4249
+-----Mean Time----1800 - matrix size
+parallelSMID: 5861.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 8291.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23.25
+-----Mean Time----400 - matrix size
+parallelSMID: 104.5
+-----Mean Time----600 - matrix size
+parallelSMID: 289.75
+-----Mean Time----800 - matrix size
+parallelSMID: 604.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 1221
+-----Mean Time----1200 - matrix size
+parallelSMID: 1971.5
+-----Mean Time----1400 - matrix size
+parallelSMID: 2980.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 4268.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5856
+-----Mean Time----2000 - matrix size
+parallelSMID: 8092.5
+-----------FINISHED-----------------
+-----------------------------------------------------------------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23.25
+-----Mean Time----400 - matrix size
+parallelSMID: 104.25
+-----Mean Time----600 - matrix size
+parallelSMID: 270.5
+-----Mean Time----800 - matrix size
+parallelSMID: 653.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 1138.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1802.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2718.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 4235.25
+-----Mean Time----1800 - matrix size
+parallelSMID: 5749
+-----Mean Time----2000 - matrix size
+parallelSMID: 7337
+-----------FINISHED-----------------
+-------------------------------------------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 28.25
+-----Mean Time----400 - matrix size
+parallelSMID: 95
+-----Mean Time----600 - matrix size
+parallelSMID: 244
+-----Mean Time----800 - matrix size
+parallelSMID: 618.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 1052.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1633.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2766.5
+-----Mean Time----1600 - matrix size
+parallelSMID: 3836.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5139.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 7408.75
+-----------FINISHED-----------------
+--------------------------------------------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22
+-----Mean Time----400 - matrix size
+parallelSMID: 122.75
+-----Mean Time----600 - matrix size
+parallelSMID: 370
+-----Mean Time----800 - matrix size
+parallelSMID: 873.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 650.25
+-----Mean Time----1200 - matrix size
+parallelSMID: 1339
+-----Mean Time----1400 - matrix size
+parallelSMID: 2386.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3861.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 2245.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 4006
+-----------FINISHED-----------------
+-------------------------------------------------------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 123.5
+-----Mean Time----600 - matrix size
+parallelSMID: 390.5
+-----Mean Time----800 - matrix size
+parallelSMID: 884.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 635.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1295.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2399
+-----Mean Time----1600 - matrix size
+parallelSMID: 3894.25
+-----Mean Time----1800 - matrix size
+parallelSMID: 2252
+-----Mean Time----2000 - matrix size
+parallelSMID: 4009.25
+-----------FINISHED-----------------
+-----------------------------------------------------------------------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 21.75
+-----Mean Time----400 - matrix size
+parallelSMID: 98.5
+-----Mean Time----600 - matrix size
+parallelSMID: 266.75
+-----Mean Time----800 - matrix size
+parallelSMID: 634
+-----Mean Time----1000 - matrix size
+parallelSMID: 1112.25
+-----Mean Time----1200 - matrix size
+parallelSMID: 1772.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2908.5
+-----Mean Time----1600 - matrix size
+parallelSMID: 4110.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5592.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 7307.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 96.5
+-----Mean Time----600 - matrix size
+parallelSMID: 243.25
+-----Mean Time----800 - matrix size
+parallelSMID: 609.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 1038.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1612
+-----Mean Time----1400 - matrix size
+parallelSMID: 2733.5
+-----Mean Time----1600 - matrix size
+parallelSMID: 3838.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5123.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 7341
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23
+-----Mean Time----400 - matrix size
+parallelSMID: 106.75
+-----Mean Time----600 - matrix size
+parallelSMID: 289
+-----Mean Time----800 - matrix size
+parallelSMID: 590.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 1205.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1949.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2955.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 4250
+-----Mean Time----1800 - matrix size
+parallelSMID: 5847.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 8288.75
+-----------FINISHED-----------------
+-----------------------------------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 99.5
+-----Mean Time----600 - matrix size
+parallelSMID: 260
+-----Mean Time----800 - matrix size
+parallelSMID: 626.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 1093.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1720
+-----Mean Time----1400 - matrix size
+parallelSMID: 2873.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 4026.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5464.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 7810
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23.25
+-----Mean Time----400 - matrix size
+parallelSMID: 124.75
+-----Mean Time----600 - matrix size
+parallelSMID: 392.5
+-----Mean Time----800 - matrix size
+parallelSMID: 882.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 552.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1231.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2254.5
+-----Mean Time----1600 - matrix size
+parallelSMID: 3742.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5715.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 3395.25
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 124.5
+-----Mean Time----600 - matrix size
+parallelSMID: 406.25
+-----Mean Time----800 - matrix size
+parallelSMID: 899.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 1694.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1094
+-----Mean Time----1400 - matrix size
+parallelSMID: 2054.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3485
+-----Mean Time----1800 - matrix size
+parallelSMID: 5356.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 7734
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 123
+-----Mean Time----600 - matrix size
+parallelSMID: 383.75
+-----Mean Time----800 - matrix size
+parallelSMID: 881.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 518.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1166.5
+-----Mean Time----1400 - matrix size
+parallelSMID: 2187
+-----Mean Time----1600 - matrix size
+parallelSMID: 3647
+-----Mean Time----1800 - matrix size
+parallelSMID: 5540.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 3175
+-----------FINISHED-----------------
+--------------------------------------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 122.75
+-----Mean Time----600 - matrix size
+parallelSMID: 391.25
+-----Mean Time----800 - matrix size
+parallelSMID: 886.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 498.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1142.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2192
+-----Mean Time----1600 - matrix size
+parallelSMID: 3589
+-----Mean Time----1800 - matrix size
+parallelSMID: 5479.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 3008.25
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.75
+-----Mean Time----400 - matrix size
+parallelSMID: 118.5
+-----Mean Time----600 - matrix size
+parallelSMID: 385
+-----Mean Time----800 - matrix size
+parallelSMID: 882
+-----Mean Time----1000 - matrix size
+parallelSMID: 450
+-----Mean Time----1200 - matrix size
+parallelSMID: 1098.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2058.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3577
+-----Mean Time----1800 - matrix size
+parallelSMID: 6201.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 2619
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 19.5
+-----Mean Time----400 - matrix size
+parallelSMID: 113.25
+-----Mean Time----600 - matrix size
+parallelSMID: 347.5
+-----Mean Time----800 - matrix size
+parallelSMID: 819.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 421
+-----Mean Time----1200 - matrix size
+parallelSMID: 1005.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 1879
+-----Mean Time----1600 - matrix size
+parallelSMID: 3242.5
+-----Mean Time----1800 - matrix size
+parallelSMID: 5300.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 2676.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 20.25
+-----Mean Time----400 - matrix size
+parallelSMID: 114.25
+-----Mean Time----600 - matrix size
+parallelSMID: 362
+-----Mean Time----800 - matrix size
+parallelSMID: 861.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 439
+-----Mean Time----1200 - matrix size
+parallelSMID: 1045.5
+-----Mean Time----1400 - matrix size
+parallelSMID: 1929
+-----Mean Time----1600 - matrix size
+parallelSMID: 3194.5
+-----Mean Time----1800 - matrix size
+parallelSMID: 5027.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 2687.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 122.25
+-----Mean Time----600 - matrix size
+parallelSMID: 391.25
+-----Mean Time----800 - matrix size
+parallelSMID: 879.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 480.25
+-----Mean Time----1200 - matrix size
+parallelSMID: 1127.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2088.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 3535.25
+-----Mean Time----1800 - matrix size
+parallelSMID: 5396.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 2882.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.75
+-----Mean Time----400 - matrix size
+parallelSMID: 123.5
+-----Mean Time----600 - matrix size
+parallelSMID: 388.5
+-----Mean Time----800 - matrix size
+parallelSMID: 885.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 503.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1166.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2156.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3573
+-----Mean Time----1800 - matrix size
+parallelSMID: 5504.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 3032.25
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23.25
+-----Mean Time----400 - matrix size
+parallelSMID: 188.5
+-----Mean Time----600 - matrix size
+parallelSMID: 486
+-----Mean Time----800 - matrix size
+parallelSMID: 1173.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 567.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1184.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2181.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3599.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5497
+-----Mean Time----2000 - matrix size
+parallelSMID: 2965.25
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 122.5
+-----Mean Time----600 - matrix size
+parallelSMID: 385.25
+-----Mean Time----800 - matrix size
+parallelSMID: 887
+-----Mean Time----1000 - matrix size
+parallelSMID: 473
+-----Mean Time----1200 - matrix size
+parallelSMID: 1097.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2112.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 3539.5
+-----Mean Time----1800 - matrix size
+parallelSMID: 5426.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 2870.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22
+-----Mean Time----400 - matrix size
+parallelSMID: 124.5
+-----Mean Time----600 - matrix size
+parallelSMID: 387.25
+-----Mean Time----800 - matrix size
+parallelSMID: 891.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 484.25
+-----Mean Time----1200 - matrix size
+parallelSMID: 1146.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2143
+-----Mean Time----1600 - matrix size
+parallelSMID: 3582.25
+-----Mean Time----1800 - matrix size
+parallelSMID: 5505.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 3009.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 123.5
+-----Mean Time----600 - matrix size
+parallelSMID: 392.25
+-----Mean Time----800 - matrix size
+parallelSMID: 869.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 503
+-----Mean Time----1200 - matrix size
+parallelSMID: 1246.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2172.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3612
+-----Mean Time----1800 - matrix size
+parallelSMID: 5526.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 3121
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 124.75
+-----Mean Time----600 - matrix size
+parallelSMID: 392.25
+-----Mean Time----800 - matrix size
+parallelSMID: 890.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 487
+-----Mean Time----1200 - matrix size
+parallelSMID: 1150.5
+-----Mean Time----1400 - matrix size
+parallelSMID: 2167.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3587.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5498
+-----Mean Time----2000 - matrix size
+parallelSMID: 3034.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22
+-----Mean Time----400 - matrix size
+parallelSMID: 123.5
+-----Mean Time----600 - matrix size
+parallelSMID: 387
+-----Mean Time----800 - matrix size
+parallelSMID: 884.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 1660.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1068.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2020
+-----Mean Time----1600 - matrix size
+parallelSMID: 3426
+-----Mean Time----1800 - matrix size
+parallelSMID: 5294.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 7736.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22
+-----Mean Time----400 - matrix size
+parallelSMID: 122
+-----Mean Time----600 - matrix size
+parallelSMID: 382.25
+-----Mean Time----800 - matrix size
+parallelSMID: 880.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 732.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1467
+-----Mean Time----1400 - matrix size
+parallelSMID: 2638.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 4177.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 3063
+-----Mean Time----2000 - matrix size
+parallelSMID: 4980
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 122.75
+-----Mean Time----600 - matrix size
+parallelSMID: 384
+-----Mean Time----800 - matrix size
+parallelSMID: 881
+-----Mean Time----1000 - matrix size
+parallelSMID: 593
+-----Mean Time----1200 - matrix size
+parallelSMID: 1249.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2308.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 3773
+-----Mean Time----1800 - matrix size
+parallelSMID: 5763.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 3751.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22
+-----Mean Time----400 - matrix size
+parallelSMID: 124.75
+-----Mean Time----600 - matrix size
+parallelSMID: 389
+-----Mean Time----800 - matrix size
+parallelSMID: 885.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 541.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1225.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2285.5
+-----Mean Time----1600 - matrix size
+parallelSMID: 3801.5
+-----Mean Time----1800 - matrix size
+parallelSMID: 5741
+-----Mean Time----2000 - matrix size
+parallelSMID: 3423.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.25
+-----Mean Time----400 - matrix size
+parallelSMID: 128.25
+-----Mean Time----600 - matrix size
+parallelSMID: 397.75
+-----Mean Time----800 - matrix size
+parallelSMID: 885
+-----Mean Time----1000 - matrix size
+parallelSMID: 476.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1164
+-----Mean Time----1400 - matrix size
+parallelSMID: 2140
+-----Mean Time----1600 - matrix size
+parallelSMID: 3584
+-----Mean Time----1800 - matrix size
+parallelSMID: 5503.75
+-----Mean Time----2000 - matrix size
+parallelSMID: 3028.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 24.75
+-----Mean Time----400 - matrix size
+parallelSMID: 129.25
+-----Mean Time----600 - matrix size
+parallelSMID: 399.5
+-----Mean Time----800 - matrix size
+parallelSMID: 891.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 465.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1148.5
+-----Mean Time----1400 - matrix size
+parallelSMID: 2126
+-----Mean Time----1600 - matrix size
+parallelSMID: 3549.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5425.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 2882.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 22.5
+-----Mean Time----400 - matrix size
+parallelSMID: 124.75
+-----Mean Time----600 - matrix size
+parallelSMID: 389.75
+-----Mean Time----800 - matrix size
+parallelSMID: 919
+-----Mean Time----1000 - matrix size
+parallelSMID: 478.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1146.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2145.25
+-----Mean Time----1600 - matrix size
+parallelSMID: 3606
+-----Mean Time----1800 - matrix size
+parallelSMID: 5526
+-----Mean Time----2000 - matrix size
+parallelSMID: 2814.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 24
+-----Mean Time----400 - matrix size
+parallelSMID: 124.75
+-----Mean Time----600 - matrix size
+parallelSMID: 394.5
+-----Mean Time----800 - matrix size
+parallelSMID: 886.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 453.5
+-----Mean Time----1200 - matrix size
+parallelSMID: 1108.75
+-----Mean Time----1400 - matrix size
+parallelSMID: 2092.5
+-----Mean Time----1600 - matrix size
+parallelSMID: 3508.5
+-----Mean Time----1800 - matrix size
+parallelSMID: 5389.5
+-----Mean Time----2000 - matrix size
+parallelSMID: 2788.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23.75
+-----Mean Time----400 - matrix size
+parallelSMID: 132.25
+-----Mean Time----600 - matrix size
+parallelSMID: 413.75
+-----Mean Time----800 - matrix size
+parallelSMID: 927.25
+-----Mean Time----1000 - matrix size
+parallelSMID: 489
+-----Mean Time----1200 - matrix size
+parallelSMID: 1233
+-----Mean Time----1400 - matrix size
+parallelSMID: 2286
+-----Mean Time----1600 - matrix size
+parallelSMID: 3812.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5474.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 2752.5
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23.5
+-----Mean Time----400 - matrix size
+parallelSMID: 131.75
+-----Mean Time----600 - matrix size
+parallelSMID: 410.5
+-----Mean Time----800 - matrix size
+parallelSMID: 927.5
+-----Mean Time----1000 - matrix size
+parallelSMID: 1755.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1174.25
+-----Mean Time----1400 - matrix size
+parallelSMID: 2286.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3884.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5134.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 7417.75
+-----------FINISHED-----------------
+--------------STARTED--------------
+-----Mean Time----200 - matrix size
+parallelSMID: 23
+-----Mean Time----400 - matrix size
+parallelSMID: 125.5
+-----Mean Time----600 - matrix size
+parallelSMID: 411.75
+-----Mean Time----800 - matrix size
+parallelSMID: 947.75
+-----Mean Time----1000 - matrix size
+parallelSMID: 497.75
+-----Mean Time----1200 - matrix size
+parallelSMID: 1194
+-----Mean Time----1400 - matrix size
+parallelSMID: 2182.75
+-----Mean Time----1600 - matrix size
+parallelSMID: 3498.75
+-----Mean Time----1800 - matrix size
+parallelSMID: 5865.25
+-----Mean Time----2000 - matrix size
+parallelSMID: 2815.25
+-----------FINISHED-----------------
