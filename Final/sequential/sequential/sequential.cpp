@@ -11,8 +11,11 @@
 # include <omp.h>
 #include <chrono>
 #include <fstream>
-#include <algorithm> 
+#include <algorithm>
 #include <immintrin.h>
+#include <cfloat>
+#include <limits>
+#include <math.h>
 
 using namespace std::chrono;
 using namespace std;
@@ -85,6 +88,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		double t0 = 0;
 		int my_size = n;
 		// Calculate time for n samples.
+		double times[SAMPLE_SIZE]={};
 		for (int i = 0; i < SAMPLE_SIZE; i++){
 			double **A = generateMatrix(my_size);
 			cout << "\nn: " << "generated a" << "\n";
@@ -93,7 +97,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			double **C = generateMatrixFinal(my_size);
 			double **T = generateMatrixFinal(my_size);
 			cout << "\nn: " << "generated c" << "\n";
-			t0+=matrixMultiplicationSequential(A, B, C, n);
+			double single_sample_time=matrixMultiplicationSequential(A, B, C, n);
+			t0+=single_sample_time;
 			delete A;
 			delete B;
 			delete C;
@@ -101,8 +106,19 @@ int _tmain(int argc, _TCHAR* argv[])
 		double T0 = 0;
 		T0 = t0 / SAMPLE_SIZE;
 		out << "-----Mean Time----" << n << " - matrix size" << "\n";
-		out << "Sequential: " << T0 << "\n"; 
-					
+		out << "Sequential: " << T0 << "\n";
+
+        //calculating std deviation
+		double sq=0;
+		for(int k=0;k<SAMPLE_SIZE;k++){
+            sq+=(times[k]-T0)*(times[k]-T0);
+		}
+		double std_dev = sqrt(sq/SAMPLE_SIZE);
+		out<< "standard deviation = " << std_dev << "\n";
+
+		//calculating sample size
+		double samplesize = ((196*std_dev)/(5*T0))* ((196*std_dev)/(5*T0)) ;
+		out << "sample size = " << samplesize << "\n";
 	}
 	out << "-----------FINISHED-----------------" << "\n";
 	out.close();

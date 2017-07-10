@@ -11,17 +11,19 @@
 # include <omp.h>
 #include <chrono>
 #include <fstream>
-#include <algorithm> 
+#include <algorithm>
 #include <immintrin.h>
+#include <cfloat>
+#include <limits>
+#include <math.h>
 
 using namespace std::chrono;
 using namespace std;
 
-const int SAMPLE_SIZE = 4;	// Set sample size
+const int SAMPLE_SIZE = 20;	// Set sample size
 
 //populate matrix with random values.
 double** generateMatrix(int n){
-	double x;
 	double max = DBL_MAX;
 	double min = DBL_MIN;
 	double** matA = new double*[n];
@@ -37,7 +39,6 @@ double** generateMatrix(int n){
 
 //generate matrix for final result.
 double** generateMatrixFinal(int n){
-	double f;
 	double** matA = new double*[n];
 	for (int i = 0; i < n; i++) {
 		matA[i] = new double[n];
@@ -50,13 +51,14 @@ double** generateMatrixFinal(int n){
 
 //matrix multiplication - parallel
 double matrixMultiplicationParallel(double** A, double** B, double** C, int n){
-	int i, j, k, l;
+	int i, j, k ;
 	clock_t begin_time = clock();
-	cout << "\nn: " << "clock started" << "\n";
+//	cout << "clock started" << "\n";
 # pragma omp parallel shared ( A,B,C,n  ) // private ( i, j, k )
 	{
 # pragma omp for
 		for (i = 0; i < n; i++) {
+//            cout<< i << ", " ;
 			for (j = 0; j < n; j++) {
 				for (k = 0; k < n; k++) {
 					C[i][j] += A[i][k] * B[k][j];
@@ -74,9 +76,10 @@ double matrixMultiplicationParallel(double** A, double** B, double** C, int n){
 int _tmain(int argc, _TCHAR* argv[])
 {
 
-	ofstream out("filename.txt", ios::out | ios::app);
+	ofstream out("output_sachi.txt", ios::out | ios::app);
+	out << "Sample size = " << SAMPLE_SIZE << "\n";
 	out << "--------------STARTED--------------" << "\n";
-	int start = 200, stop = 2000, step = 200;
+	int start = 2000, stop = 2000, step = 200;
 
 	for (int n = start; n <= stop; n += step)
 	{
@@ -88,14 +91,20 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		int my_size = n;
 		// Calculate time for n samples.
+		double times[SAMPLE_SIZE]={};
 		for (int i = 0; i < SAMPLE_SIZE; i++){
+//            cout << "sample #" << i << " : ";
 			double **A = generateMatrix(my_size);
-			cout << "\nn: " << "generated a" << "\n";
+//			cout << "\nn: " << "generated a" << "\n";
 			double **B = generateMatrix(my_size);
-			cout << "\nn: " << "generated b" << "\n";
+//			cout << "\nn: " << "generated b" << "\n";
 			double **C = generateMatrixFinal(my_size);
-			cout << "\nn: " << "generated c" << "\n";
-			t1 += matrixMultiplicationParallel(A, B, C, n);
+//			cout << "\nn: " << "generated c" << "\n";
+			double single_sample_time= matrixMultiplicationParallel(A, B, C, n);
+//            cout << single_sample_time;
+			times[i]=single_sample_time;
+
+			t1 += single_sample_time;
 			delete A;
 			delete B;
 			delete C;
@@ -103,7 +112,20 @@ int _tmain(int argc, _TCHAR* argv[])
 		double T1 = 0;
 		T1 = t1 / SAMPLE_SIZE;
 		out << "-----Mean Time----" << n << " - matrix size" << "\n";
-		out << "Parallel: " << T1 << "\n";
+		cout<< "mean = " << T1 << "\n" ;
+		out << "Parallel mean: " << T1 << "\n";
+
+		//calculating std deviation
+		double sq=0;
+		for(int k=0;k<SAMPLE_SIZE;k++){
+            sq+=(times[k]-T1)*(times[k]-T1);
+		}
+		double std_dev = sqrt(sq/SAMPLE_SIZE);
+		cout<< "standard deviation = " << std_dev << "\n";
+
+		//calculating sample size
+		double samplesize = ((196*std_dev)/(5*T1))* ((196*std_dev)/(5*T1)) ;
+		cout << "sample size = " << samplesize << "\n";
 	}
 	out << "-----------FINISHED-----------------" << "\n";
 	out.close();

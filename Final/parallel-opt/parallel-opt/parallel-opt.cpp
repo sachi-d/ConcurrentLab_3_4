@@ -11,8 +11,11 @@
 # include <omp.h>
 #include <chrono>
 #include <fstream>
-#include <algorithm> 
+#include <algorithm>
 #include <immintrin.h>
+#include <cfloat>
+#include <limits>
+#include <math.h>
 
 using namespace std::chrono;
 using namespace std;
@@ -57,7 +60,7 @@ double** generateMatrixFinal(int n){
 //matrix multiplication - Cache blocking (parameter),SIMD instruction (x8 float, x4 double) and OpenMP 'parallel for' on outermost loop.
 double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double** C, int n) {
 	int i, j, k, l;
-	int limit0 = n; 			// Index i limit 
+	int limit0 = n; 			// Index i limit
 	int limit1 = n; 			// Index j limit
 	int limit2 = n; 			// Index k limit
 	int aux_i, aux_j, aux_k;
@@ -137,9 +140,9 @@ double** trn(double **b, double **t)
 int _tmain(int argc, _TCHAR* argv[])
 {
 
-	ofstream out("filename.txt", ios::out | ios::app);
+	ofstream out("output_sachi.txt", ios::out | ios::app);
 	out << "--------------STARTED--------------" << "\n";
-	int start = 200, stop = 2000, step = 200;
+	int start = 2000, stop = 2000, step = 200;
 
 	for (int n = start; n <= stop; n += step)
 	{
@@ -151,6 +154,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		int my_size = n;
 		// Calculate time for n samples.
+		double times[SAMPLE_SIZE]={};
 		for (int i = 0; i < SAMPLE_SIZE; i++){
 			double **A = generateMatrix(my_size);
 			cout << "\nn: " << "generated a" << "\n";
@@ -160,7 +164,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			double **T = generateMatrixFinal(my_size);
 			cout << "\nn: " << "generated c" << "\n";
 			T = trn(B, T);
-			t3 += matrixMultiplicationOptimized_doubleSMID(A, T, C, n);
+			double single_sample_time=matrixMultiplicationOptimized_doubleSMID(A, T, C, n);
+			t3 += single_sample_time;
 			delete A;
 			delete B;
 			delete C;
@@ -171,6 +176,18 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		out << "-----Mean Time----" << n << " - matrix size" << "\n";
 		out << "parallelSMID: " << T3 << "\n";
+
+		//calculating std deviation
+		double sq=0;
+		for(int k=0;k<SAMPLE_SIZE;k++){
+            sq+=(times[k]-T3)*(times[k]-T3);
+		}
+		double std_dev = sqrt(sq/SAMPLE_SIZE);
+		out<< "standard deviation = " << std_dev << "\n";
+
+		//calculating sample size
+		double samplesize = ((196*std_dev)/(5*T3))* ((196*std_dev)/(5*T3)) ;
+		out << "sample size = " << samplesize << "\n";
 	}
 	out << "-----------FINISHED-----------------" << "\n";
 	out.close();
