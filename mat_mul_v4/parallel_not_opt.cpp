@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
-# include <omp.h>
+#include <omp.h>
 #include <chrono>
 #include <fstream>
 #include <algorithm>
@@ -23,7 +23,7 @@ using namespace std;
 const int SAMPLE_SIZE = 20;	// Set sample size
 
 //populate matrix with random values.
-double** generateMatrix(int n){ 
+double** generateMatrix(int n){
 	double max = DBL_MAX;
 	double min = DBL_MIN;
 	double** matA = new double*[n];
@@ -38,7 +38,7 @@ double** generateMatrix(int n){
 }
 
 //generate matrix for final result.
-double** generateMatrixFinal(int n){ 
+double** generateMatrixFinal(int n){
 	double** matA = new double*[n];
 	for (int i = 0; i < n; i++) {
 		matA[i] = new double[n];
@@ -51,22 +51,18 @@ double** generateMatrixFinal(int n){
 
 //matrix multiplication - parallel
 double matrixMultiplicationParallel(double** A, double** B, double** C, int n){
-	int i, j, k;
 	clock_t begin_time = clock();
-	//	cout << "clock started" << "\n";
-# pragma omp parallel shared ( A,B,C,n  ) // private ( i, j, k )
-	{
+# pragma omp parallel
+    {
 # pragma omp for
-		for (i = 0; i < n; i++) {
-			//            cout<< i << ", " ;
-			for (j = 0; j < n; j++) {
-				for (k = 0; k < n; k++) {
-					C[i][j] += A[i][k] * B[k][j];
-				}
-			}
-		}
-	}
-	//ofstream out("filename.txt", ios::out | ios::app);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < n; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+    }
 	double t = float(clock() - begin_time);
 	//out << "parallel: " << t << "\n";
 	//out.close();
@@ -105,10 +101,10 @@ int _tmain(int argc, _TCHAR* argv[])
 			times[i] = single_sample_time;
 
 			t1 += single_sample_time;
-			for (int i = 0; i < n; i++) {
-				delete[] A[i];
-				delete[] B[i];
-				delete[] C[i];
+			for (int mypointer = 0; mypointer < n; mypointer++) {
+				delete[] A[mypointer];
+				delete[] B[mypointer];
+				delete[] C[mypointer];
 			}
 			delete[] A;
 			delete[] B;
