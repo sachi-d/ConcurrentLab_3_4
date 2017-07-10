@@ -16,3 +16,6 @@ To run:
 
 To compile:
 <pre>g++ -std=gnu++11 -g -Wall -fopenmp -o parallel_not_opt parallel_not_opt.cpp</pre>
+
+To run:
+<pre>parallel_not_opt</pre>
