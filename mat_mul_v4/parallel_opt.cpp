@@ -26,7 +26,6 @@ const int g_outputPrecision = 15; // Output elements precision.
 
 //populate matrix with random values.
 double** generateMatrix(int n){
-	double x;
 	double max = DBL_MAX;
 	double min = DBL_MIN;
 	double** matA = new double*[n];
@@ -42,7 +41,6 @@ double** generateMatrix(int n){
 
 //generate matrix for final result.
 double** generateMatrixFinal(int n){
-	double f;
 	double** matA = new double*[n];
 	for (int i = 0; i < n; i++) {
 		matA[i] = new double[n];
@@ -55,16 +53,15 @@ double** generateMatrixFinal(int n){
 
 //matrix multiplication - Cache blocking (parameter),SIMD instruction (x8 float, x4 double) and OpenMP 'parallel for' on outermost loop.
 double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double** C, int n, int g_cacheBlockSize) {
-	int i, j, k, l;
-	int limit0 = n; 			// Index i limit
+    int limit0 = n; 			// Index i limit
 	int limit1 = n; 			// Index j limit
 	int limit2 = n; 			// Index k limit
-	int aux_i, aux_j, aux_k;
-	int aux_limit_i; 	 			// Block index limit i
-	int aux_limit_j; 	 			// Block index limit j
-	int aux_limit_k; 	 			// Block index limit k
+//	int aux_i, aux_j, aux_k;
+//	int aux_limit_i; 	 			// Block index limit i
+//	int aux_limit_j; 	 			// Block index limit j
+//	int aux_limit_k; 	 			// Block index limit k
 	int unroll_factor = g_cacheBlockSize;
-	int unroll_limit; 	 			// Loop unroll index limit
+//	int unroll_limit; 	 			// Loop unroll index limit
 	clock_t begin_time = clock();
 	cout << "\nn: " << "clock started" << "\n";
 #pragma omp parallel for
@@ -89,7 +86,8 @@ double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double**
 						__m256d acc = _mm256_broadcast_sd(&zero);
 
 						// Unrolling for k loop
-						for (int aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
+						int aux_k;
+						for (aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
 							acc = _mm256_add_pd(acc,
 								_mm256_mul_pd(_mm256_load_pd(&A[aux_i][aux_k]), _mm256_load_pd(&B[aux_j][aux_k])));
 						}
@@ -164,11 +162,11 @@ int main(int argc, char* argv[])
 				T = trn(B, T);
 				double single_sample_time = matrixMultiplicationOptimized_doubleSMID(A, T, C, n, g_cacheBlockSize);
 				t3 += single_sample_time;
-				for (int i = 0; i < n; i++) {
-					delete[] A[i];
-					delete[] B[i];
-					delete[] C[i];
-					delete[] T[i];
+				for (int mypointer = 0; mypointer < n; mypointer++) {
+					delete[] A[mypointer];
+					delete[] B[mypointer];
+					delete[] C[mypointer];
+					delete[] T[mypointer];
 				}
 				delete[] A;
 				delete[] B;
