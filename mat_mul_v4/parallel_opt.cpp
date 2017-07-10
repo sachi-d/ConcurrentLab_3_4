@@ -1,7 +1,7 @@
 // yas-concurrent.cpp : Defines the entry point for the console application.
 
 
-#include "stdafx.h"
+#include "includes/stdafx.h"
 
 #include <iostream>
 #include <stdio.h>
@@ -67,29 +67,29 @@ double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double**
 	int unroll_limit; 	 			// Loop unroll index limit
 	clock_t begin_time = clock();
 	cout << "\nn: " << "clock started" << "\n";
-#pragma omp parallel for private(i, j, k, aux_i, aux_j, aux_k, aux_limit_i, aux_limit_j, aux_limit_k, unroll_limit) shared (A,B,C)
-	for (i = 0; i < limit0; i += g_cacheBlockSize) {
+#pragma omp parallel for
+	for (int i = 0; i < limit0; i += g_cacheBlockSize) {
 		// Blocking index i limit
-		aux_limit_i = min((i + g_cacheBlockSize), limit0);
+		int aux_limit_i = min((i + g_cacheBlockSize), limit0);
 
-		for (j = 0; j < limit1; j += g_cacheBlockSize) {
+		for (int j = 0; j < limit1; j += g_cacheBlockSize) {
 			// Blocking index j limit
-			aux_limit_j = min((j + g_cacheBlockSize), limit1);
+			int aux_limit_j = min((j + g_cacheBlockSize), limit1);
 
-			for (k = 0; k < limit2; k += g_cacheBlockSize) {
+			for (int k = 0; k < limit2; k += g_cacheBlockSize) {
 				// Blocking index k limit
-				aux_limit_k = min((k + g_cacheBlockSize), limit2);
+				int aux_limit_k = min((k + g_cacheBlockSize), limit2);
 
-				unroll_limit = aux_limit_k - (unroll_factor - 1); // Unrolling by factor of 4
+				int unroll_limit = aux_limit_k - (unroll_factor - 1); // Unrolling by factor of 4
 
-				for (aux_i = i; aux_i < aux_limit_i; ++aux_i) {
-					for (aux_j = j; aux_j < aux_limit_j; ++aux_j) {
+				for (int aux_i = i; aux_i < aux_limit_i; ++aux_i) {
+					for (int aux_j = j; aux_j < aux_limit_j; ++aux_j) {
 
 						double zero = 0;
 						__m256d acc = _mm256_broadcast_sd(&zero);
 
 						// Unrolling for k loop
-						for (aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
+						for (int aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
 							acc = _mm256_add_pd(acc,
 								_mm256_mul_pd(_mm256_load_pd(&A[aux_i][aux_k]), _mm256_load_pd(&B[aux_j][aux_k])));
 						}
@@ -133,7 +133,7 @@ double** trn(double **b, double **t)
 
 int main(int argc, char* argv[])
 {
-	
+
 	if (argc == 2){
 		const int LEVEL_ONE_CACHE_SIZE_KB = atoi(argv[1]); // L1cache size* no of physical cores
 		const int g_cacheBlockSize = floor(sqrt((LEVEL_ONE_CACHE_SIZE_KB * 1024) / 8));	// Block size for loop tilling/blocking.
