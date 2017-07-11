@@ -53,7 +53,6 @@ double** generateMatrixFinal(int n){
 
 //matrix multiplication - Cache blocking (parameter),SIMD instruction (x8 float, x4 double) and OpenMP 'parallel for' on outermost loop.
 double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double** C, int n, int g_cacheBlockSize) {
-
     int limit0 = n; 			// Index i limit
 	int limit1 = n; 			// Index j limit
 	int limit2 = n; 			// Index k limit
@@ -94,14 +93,14 @@ double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double**
                             // Unrolling for k loop
                             int aux_k;
                             for (aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
-                                acc = _mm256_add_pd(acc,
-                                    _mm256_mul_pd(_mm256_load_pd(&A[aux_i][aux_k]), _mm256_load_pd(&B[aux_j][aux_k])));
+                                 acc = _mm256_add_pd(acc,
+                                    _mm256_mul_pd(_mm256_loadu_pd(&A[aux_i][aux_k]), _mm256_loadu_pd(&B[aux_j][aux_k])));
                             }
 
                             // Gather possible uncounted elements
-                            for (; aux_k < aux_limit_k; ++aux_k)
+                            for (; aux_k < aux_limit_k; ++aux_k){
                                 C[aux_i][aux_j] += A[aux_i][aux_k] * B[aux_j][aux_k];
-
+                            }
 
                             // Sum up everything
                             double acc_vet[4];
