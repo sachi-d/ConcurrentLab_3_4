@@ -19,3 +19,11 @@ To compile:
 
 To run:
 <pre>parallel_not_opt</pre>
+
+# Parallel - optimized
+
+To compile:
+<pre>g++ -std=gnu++11 -g -Wall -fopenmp -mavx -o parallel_opt parallel_opt.cpp</pre>
+
+To run:
+<pre>parallel_opt 128</pre> <i>- where 128 is the L2 cache size</i>
