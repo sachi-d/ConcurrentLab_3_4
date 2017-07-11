@@ -57,7 +57,7 @@ double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double**
     int limit0 = n; 			// Index i limit
 	int limit1 = n; 			// Index j limit
 	int limit2 = n; 			// Index k limit
-	int unroll_factor =  g_cacheBlockSize;
+	int unroll_factor = 4; // g_cacheBlockSize;
 //	int aux_i, aux_j, aux_k;
 //	int aux_limit_i; 	 			// Block index limit i
 //	int aux_limit_j; 	 			// Block index limit j
