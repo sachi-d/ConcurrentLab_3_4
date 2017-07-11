@@ -53,62 +53,69 @@ double** generateMatrixFinal(int n){
 
 //matrix multiplication - Cache blocking (parameter),SIMD instruction (x8 float, x4 double) and OpenMP 'parallel for' on outermost loop.
 double matrixMultiplicationOptimized_doubleSMID(double** A, double** B, double** C, int n, int g_cacheBlockSize) {
+
     int limit0 = n; 			// Index i limit
 	int limit1 = n; 			// Index j limit
 	int limit2 = n; 			// Index k limit
+	int unroll_factor =  g_cacheBlockSize;
 //	int aux_i, aux_j, aux_k;
 //	int aux_limit_i; 	 			// Block index limit i
 //	int aux_limit_j; 	 			// Block index limit j
 //	int aux_limit_k; 	 			// Block index limit k
-	int unroll_factor = g_cacheBlockSize;
+
 //	int unroll_limit; 	 			// Loop unroll index limit
 	clock_t begin_time = clock();
 	cout << "\nn: " << "clock started" << "\n";
-#pragma omp parallel for
-	for (int i = 0; i < limit0; i += g_cacheBlockSize) {
-		// Blocking index i limit
-		int aux_limit_i = min((i + g_cacheBlockSize), limit0);
+#pragma omp parallel
+    {
 
-		for (int j = 0; j < limit1; j += g_cacheBlockSize) {
-			// Blocking index j limit
-			int aux_limit_j = min((j + g_cacheBlockSize), limit1);
+#pragma omp for
+        for (int i = 0; i < n; i += g_cacheBlockSize) {
 
-			for (int k = 0; k < limit2; k += g_cacheBlockSize) {
-				// Blocking index k limit
-				int aux_limit_k = min((k + g_cacheBlockSize), limit2);
+            // Blocking index i limit
+            int aux_limit_i = min((i + g_cacheBlockSize), limit0);
 
-				int unroll_limit = aux_limit_k - (unroll_factor - 1); // Unrolling by factor of 4
+            for (int j = 0; j < limit1; j += g_cacheBlockSize) {
+                // Blocking index j limit
+                int aux_limit_j = min((j + g_cacheBlockSize), limit1);
 
-				for (int aux_i = i; aux_i < aux_limit_i; ++aux_i) {
-					for (int aux_j = j; aux_j < aux_limit_j; ++aux_j) {
+                for (int k = 0; k < limit2; k += g_cacheBlockSize) {
+                    // Blocking index k limit
+                    int aux_limit_k = min((k + g_cacheBlockSize), limit2);
 
-						double zero = 0;
-						__m256d acc = _mm256_broadcast_sd(&zero);
+                    int unroll_limit = aux_limit_k - (unroll_factor - 1); // Unrolling by factor of 4
 
-						// Unrolling for k loop
-						int aux_k;
-						for (aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
-							acc = _mm256_add_pd(acc,
-								_mm256_mul_pd(_mm256_load_pd(&A[aux_i][aux_k]), _mm256_load_pd(&B[aux_j][aux_k])));
-						}
+                    for (int aux_i = i; aux_i < aux_limit_i; ++aux_i) {
+                        for (int aux_j = j; aux_j < aux_limit_j; ++aux_j) {
 
-						// Gather possible uncounted elements
-						for (; aux_k < aux_limit_k; ++aux_k)
-							C[aux_i][aux_j] += A[aux_i][aux_k] * B[aux_j][aux_k];
+                            double zero = 0;
+                            __m256d acc = _mm256_broadcast_sd(&zero);
+
+                            // Unrolling for k loop
+                            int aux_k;
+                            for (aux_k = k; aux_k < unroll_limit; aux_k += unroll_factor) {
+                                acc = _mm256_add_pd(acc,
+                                    _mm256_mul_pd(_mm256_load_pd(&A[aux_i][aux_k]), _mm256_load_pd(&B[aux_j][aux_k])));
+                            }
+
+                            // Gather possible uncounted elements
+                            for (; aux_k < aux_limit_k; ++aux_k)
+                                C[aux_i][aux_j] += A[aux_i][aux_k] * B[aux_j][aux_k];
 
 
-						// Sum up everything
-						double acc_vet[4];
+                            // Sum up everything
+                            double acc_vet[4];
 
-						_mm256_storeu_pd(acc_vet, acc);
+                            _mm256_storeu_pd(acc_vet, acc);
 
-						C[aux_i][aux_j] += acc_vet[0] + acc_vet[1] + acc_vet[2] + acc_vet[3];
+                            C[aux_i][aux_j] += acc_vet[0] + acc_vet[1] + acc_vet[2] + acc_vet[3];
 
-					}
-				}
-			}
-		}
-	}
+                        }
+                    }
+                }
+            }
+        }
+    }
 	//ofstream out("filename.txt", ios::out | ios::app);
 	double t = float(clock() - begin_time);
 	//out << "parallelSMID: " << t << "\n";
